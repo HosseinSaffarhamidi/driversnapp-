@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.example.adrom.driversnapp.PanelActivity"
+    tools:showIn="@layout/activity_panel">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:id="@+id/header_layout"
+            >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:orientation="vertical"
+                android:padding="10dp"
+                android:background="@drawable/border"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ارتباط با سرور"
+                    android:layout_gravity="center_horizontal"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="فعال"
+                    android:textColor="@color/btn_color"
+                    android:layout_gravity="center_horizontal"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:orientation="vertical"
+                android:background="@drawable/border"
+                android:padding="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="اعتبار شما"
+                    android:layout_gravity="center_horizontal"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1000 ریال"
+                    android:id="@+id/inventory"
+                    android:textColor="@color/btn_color"
+                    android:layout_gravity="center_horizontal"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:orientation="vertical"
+                android:background="@drawable/border"
+                android:padding="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="مکان یاب"
+                    android:layout_gravity="center_horizontal"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="فعال"
+                    android:id="@+id/gps_status"
+                    android:textColor="@color/btn_color"
+                    android:layout_gravity="center_horizontal"
+                    />
+            </LinearLayout>
+        </RelativeLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/header_layout"
+            android:orientation="horizontal"
+            >
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:padding="10dp"
+                android:onClick="show_service"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="لیست سفر ها"
+                    />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:padding="10dp"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="لیست تراکنش ها"
+                    />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_alignParentBottom="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center_horizontal"
+                android:background="@drawable/border"
+                android:onClick="change_status1"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="قابل دسترس"
+                    android:paddingTop="15dp"
+                    android:paddingBottom="15dp"
+                    />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp"
+                    android:background="@color/inActive"
+                    android:id="@+id/available"
+                    />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:onClick="change_status2"
+                android:gravity="center_horizontal"
+                android:background="@drawable/border"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="خارج از دسترس"
+                    android:paddingTop="15dp"
+                    android:paddingBottom="15dp"
+                    />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp"
+                    android:background="@color/unavailable"
+                    android:id="@+id/unavailable"
+                    />
+            </LinearLayout>
+        </LinearLayout>
+
+    </RelativeLayout>
+</RelativeLayout>

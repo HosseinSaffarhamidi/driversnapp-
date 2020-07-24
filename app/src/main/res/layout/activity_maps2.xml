@@ -1,0 +1,544 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:map="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layoutDirection="rtl"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/map_box"
+        >
+
+
+        <com.cedarstudios.cedarmapssdk.MapView
+            android:id="@+id/mapView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:mapbox_cameraZoom="16"
+            app:mapbox_cameraTargetLat="38.0412"
+            app:mapbox_cameraTargetLng="46.3993"
+            />
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#272f86"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:id="@+id/layout_tollbar"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text="تاکسی"
+                android:textColor="#FFF"
+                android:textSize="19dp"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:text="لغو سفر"
+                android:textColor="#1e8cb1"
+                android:textSize="19dp"
+                android:layout_marginLeft="10dp"
+                android:onClick="cancel"
+                />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#ffffff"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:layout_below="@+id/layout_tollbar"
+            android:id="@+id/address_box"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/address"
+                android:padding="10dp"
+                />
+
+
+
+        </RelativeLayout>
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#03914c"
+            android:layout_below="@+id/address_box"
+            android:id="@+id/line"
+            />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#ffffff"
+            android:layout_below="@+id/line"
+            >
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/user_name"
+                android:paddingTop="10dp"
+                android:paddingRight="10dp"
+                />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:background="#03914c"
+                android:padding="10dp"
+                android:orientation="horizontal"
+                android:onClick="call"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="تماس با مسافر"
+                    android:textColor="#FFF"
+                    android:layout_marginTop="2dp"
+                    />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/phone"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginLeft="5dp"
+                    />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/directions"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="50dp"
+            android:id="@+id/directions"
+            android:layout_marginRight="10dp"
+            />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="هشدار رسیدن"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="15dp"
+            android:paddingBottom="5dp"
+            android:id="@+id/btn_status"
+            android:paddingTop="5dp"
+            android:paddingRight="20dp"
+            android:paddingLeft="20dp"
+            android:background="#03914c"
+            android:textColor="#FFF"
+            android:textStyle="bold"
+            android:onClick="set_status"
+            />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/service_box"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/map_box"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <androidx.gridlayout.widget.GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="70dp">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:paddingTop="10dp"
+                    map:layout_columnWeight="1">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:text="محدوده"
+                        android:textColor="#272f86" />
+
+                    <TextView
+                        android:id="@+id/area"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal" />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="70dp"
+                    android:background="#acacac"
+                    android:paddingTop="10dp" />
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:paddingTop="10dp"
+                    map:layout_columnWeight="1">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:text="نام مسافر"
+                        android:textColor="#272f86" />
+
+                    <TextView
+                        android:id="@+id/user_name2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal" />
+
+                </LinearLayout>
+
+            </androidx.gridlayout.widget.GridLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#acacac" />
+
+            <TextView
+                android:id="@+id/price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="15dp"
+                android:paddingBottom="20dp"
+                android:paddingTop="20dp"
+                android:textColor="#f7ad36" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#acacac" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="15dp"
+                android:paddingTop="20dp"
+                android:text="آدرس مقصد"
+                android:textColor="#272f86" />
+
+            <TextView
+                android:id="@+id/address2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="15dp"
+                android:paddingBottom="20dp"
+                android:paddingTop="5dp"
+                android:textColor="#000" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="15dp"
+                android:paddingTop="10dp"
+                android:id="@+id/stop_times"
+                android:textColor="#272f86" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#acacac" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="20dp"
+                android:paddingTop="20dp">
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/directions"
+                        android:onClick="location"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:paddingRight="5dp"
+                        android:paddingTop="10dp"
+                        android:text="مسیر یابی"
+                        android:onClick="location"
+                        android:textColor="#3d1b99"
+                        android:textSize="16dp" />
+                </LinearLayout>
+
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#acacac" />
+        </LinearLayout>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="#03914c"
+            android:id="@+id/btn_set_status"
+            android:text="پایان سفر"
+            android:textColor="#FFF"
+            android:textSize="18dp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/message_box"
+        android:orientation="vertical"
+        android:visibility="gone"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:id="@+id/like_box"
+            android:background="@color/btn_color"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="از سرویس شما ممنونیم"
+                android:textColor="#FFF"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#000"
+                />
+
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:textColor="#FFF"
+                android:text="آیا از مسافر خود راضی هستین ؟ "
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="15dp"
+                android:textSize="20dp"
+                />
+
+            <androidx.gridlayout.widget.GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    map:layout_columnWeight="1"
+                    >
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="40dp"
+                        android:layout_marginLeft="40dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginBottom="15dp"
+                        android:background="@drawable/like_border"
+                        android:paddingTop="20dp"
+                        android:paddingBottom="20dp"
+                        android:onClick="like"
+                        >
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/thumb_up"
+                            android:id="@+id/like"
+                            android:layout_centerHorizontal="true"
+                            />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:text="بله"
+                            android:layout_below="@+id/like"
+                            android:textColor="#FFF"
+                            android:layout_marginTop="10dp"
+                            android:textSize="18dp"
+                            />
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    map:layout_columnWeight="1"
+                    >
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="40dp"
+                        android:layout_marginLeft="40dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginBottom="15dp"
+                        android:background="@drawable/like_border"
+                        android:paddingTop="20dp"
+                        android:paddingBottom="20dp"
+                        android:onClick="dislike"
+                        >
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/dislike"
+                            android:src="@drawable/thumb_down"
+                            android:layout_centerHorizontal="true"
+                            />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:text="خیر"
+                            android:layout_below="@+id/dislike"
+                            android:textColor="#FFF"
+                            android:layout_marginTop="10dp"
+                            android:textSize="18dp"
+                            />
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+            </androidx.gridlayout.widget.GridLayout>
+
+
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/like_box"
+            android:orientation="vertical"
+            >
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="درآمد شما از این سفر"
+                    android:textColor="#000"
+                    />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:textColor="#000"
+                    android:id="@+id/service_price"
+                    />
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#c2c2c2"
+                >
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="15dp"
+
+                    >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="مجموع درآمد امروز شما"
+                        android:textColor="#000"
+                        />
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:textColor="#000"
+                        android:id="@+id/total_price"
+                        />
+                </RelativeLayout>
+            </RelativeLayout>
+
+        </LinearLayout>
+
+
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="بازگشت به صفحه اصلی"
+            android:textColor="#FFF"
+            android:background="@color/btn_color"
+            android:layout_alignParentBottom="true"
+            android:textSize="18dp"
+            android:onClick="home"
+            />
+
+
+    </RelativeLayout>
+</RelativeLayout>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#FF00</color>
+    <color name="btn_color">#03914c</color>
+    <color name="dialog_btn">#41A0AD</color>
+    <color name="border_color">#a7a7a7</color>
+    <color name="inActive">#a7a7a7</color>
+    <color name="unavailable">#FF00</color>
+    <color name="available">#41A0AD</color>
+    <color name="green_color">#41A0AD</color>
+</resources>

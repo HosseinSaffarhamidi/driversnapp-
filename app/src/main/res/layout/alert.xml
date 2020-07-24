@@ -1,0 +1,80 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:map="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layoutDirection="rtl"
+    >
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/title"
+        android:textColor="#000"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/message"
+        android:textColor="#000"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        />
+
+
+
+    <androidx.gridlayout.widget.GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/btn_color"
+        android:layout_marginTop="10dp"
+        >
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:paddingTop="10dp"
+            map:layout_columnWeight="1">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="بله"
+                android:id="@+id/btn_ok"
+                android:textColor="#FFF" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="70dp"
+            android:background="#acacac"
+            android:paddingTop="10dp" />
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:paddingTop="10dp"
+            map:layout_columnWeight="1">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="خیر"
+                android:id="@+id/btn_no"
+                android:textColor="#FFF" />
+
+
+        </LinearLayout>
+
+    </androidx.gridlayout.widget.GridLayout>
+
+</LinearLayout>
